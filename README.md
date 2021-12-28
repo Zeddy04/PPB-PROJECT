@@ -5,3 +5,4 @@ Project is created with:
 * Java
 * Firebase
 
+## Rules
