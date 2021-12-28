@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "305902920164",
+    "firebase_url": "https://rakitinajacartdatabase-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "rakitinajacartdatabase",
+    "storage_bucket": "rakitinajacartdatabase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:305902920164:android:0ce16e80525c206706a7f1",
+        "android_client_info": {
+          "package_name": "com.example.rakitinaja"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "305902920164-utfega328j5fbd6l6fsehb3sbi258ddl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB87OBA-T_uLOq6dg6gyy0yJgAq2AjHYQ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "305902920164-utfega328j5fbd6l6fsehb3sbi258ddl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
