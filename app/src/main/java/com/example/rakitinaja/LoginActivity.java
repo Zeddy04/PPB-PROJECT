@@ -24,7 +24,6 @@ public class LoginActivity extends AppCompatActivity {
 
     Button btnLogin;
     EditText inputNomer, inputPassword;
-    private final String parentDB = "User";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +33,7 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btn_login);
         inputNomer = findViewById(R.id.etLogNomer);
         inputPassword = findViewById(R.id.etLogPassword);
-
+        Paper.init(this);
         btnLogin.setOnClickListener(v -> AllowToLogin());
     }
 
@@ -57,6 +56,9 @@ public class LoginActivity extends AppCompatActivity {
 
     private void Validate(final String phone, final String password) {
 
+        Paper.book().write(Prevalent.userPhoneKey, phone);
+        Paper.book().write(Prevalent.userPasswordKey, password);
+
         final DatabaseReference RootRef;
         RootRef = FirebaseDatabase.getInstance("https://rakitinajacartdatabase-default-rtdb.asia-southeast1.firebasedatabase.app").getReference();
 
@@ -71,8 +73,7 @@ public class LoginActivity extends AppCompatActivity {
                         if(user.getPassword().equals(password)){
                             Toast.makeText(LoginActivity.this, "Succes Login", Toast.LENGTH_SHORT).show();
 
-
-                            Intent intent = new Intent(LoginActivity.this, StartActivity.class);
+                            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                             startActivity(intent);
                         }
                     }

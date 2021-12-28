@@ -6,28 +6,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.Toast;
-
-import com.example.rakitinaja.prevalent.Prevalent;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import java.util.HashMap;
 import java.util.Objects;
 
-import io.paperdb.Paper;
 
 public class RegisterActivity extends AppCompatActivity {
 
     EditText inputName, inputPhone, inputPassword;
-    ProgressBar loadingBar;
     Button btnRegister;
 
     @Override
@@ -39,9 +32,6 @@ public class RegisterActivity extends AppCompatActivity {
         inputName = findViewById(R.id.etNama);
         inputPhone = findViewById(R.id.etNomer);
         inputPassword = findViewById(R.id.etPassword);
-        loadingBar = new ProgressBar(this);
-        Paper.init(this);
-
         btnRegister.setOnClickListener(v -> CreateAccount());
     }
 
@@ -64,7 +54,6 @@ public class RegisterActivity extends AppCompatActivity {
             Validate(name, phone, password);
         }
 
-
     }
 
     private void Validate(final String name, final String phone, final String password) {
@@ -80,10 +69,6 @@ public class RegisterActivity extends AppCompatActivity {
                    userDataMap.put("name", name);
                    userDataMap.put("phone", phone);
                    userDataMap.put("password", password);
-
-                   Paper.book().write(Prevalent.userPhoneKey, phone);
-                   Paper.book().write(Prevalent.userPasswordKey, password);
-
                    RootRef.child("Users").child((String) Objects.requireNonNull(userDataMap.get("phone"))).updateChildren(userDataMap)
                            .addOnCompleteListener(task -> {
                                if(task.isSuccessful()){

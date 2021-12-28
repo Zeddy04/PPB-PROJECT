@@ -44,7 +44,7 @@
             android:paddingEnd="10dp"
             android:textColor="@color/black"
             android:textSize="16sp"
-            app:layout_constraintEnd_toStartOf="@+id/imageView"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewProfil"
             app:layout_constraintHorizontal_bias="0.547"
             app:layout_constraintStart_toEndOf="@+id/imageView2"
             app:layout_constraintTop_toTopOf="parent" />

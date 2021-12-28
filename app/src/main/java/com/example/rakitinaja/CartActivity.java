@@ -33,6 +33,48 @@ import io.paperdb.Paper;
 
 public class CartActivity extends AppCompatActivity {
 
+    RecyclerView recyclerView;
+    ArrayList<CartModel> listCart;
+    CartAdapter adapter;
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_cart);
+        Paper.init(this);
+        String phone = Paper.book().read(Prevalent.userPhoneKey);
+        recyclerView = findViewById(R.id.cartmaincard);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        listCart = new ArrayList<>();
+        adapter = new CartAdapter(listCart,this);
+        recyclerView.setAdapter(adapter);
+
+        DatabaseReference reff = FirebaseDatabase
+                .getInstance("https://rakitinajacartdatabase-default-rtdb.asia-southeast1.firebasedatabase.app")
+                .getReference().child("Cart List").child(phone).child("Product");
+
+        reff.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("NotifyDataSetChanged")
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    CartModel cartModel = dataSnapshot.getValue(CartModel.class);
+                    listCart.add(cartModel);
+                }
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    //MENCOBA DENGAN METODE FIREBASE RECYCLER TAPI GAGAL NANTI COBA LAGI
+
     /*RecyclerView recyclerView;
     ArrayList<CartModel> listCart;
     String saveCurrentTime, saveCurrentDate;
@@ -85,42 +127,4 @@ public class CartActivity extends AppCompatActivity {
         super.onStop();
         fireadapter.stopListening();
     }*/
-    RecyclerView recyclerView;
-    ArrayList<CartModel> listCart;
-    CartAdapter adapter;
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cart);
-        Paper.init(this);
-        String phone = Paper.book().read(Prevalent.userPhoneKey);
-
-        recyclerView = findViewById(R.id.cartmaincard);
-        DatabaseReference reff = FirebaseDatabase.getInstance("https://rakitinajacartdatabase-default-rtdb.asia-southeast1.firebasedatabase.app")
-                .getReference().child("Cart List").child(phone).child("Product");
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        listCart = new ArrayList<>();
-        adapter = new CartAdapter(listCart,this);
-        recyclerView.setAdapter(adapter);
-
-        reff.addValueEventListener(new ValueEventListener() {
-            @SuppressLint("NotifyDataSetChanged")
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot dataSnapshot : snapshot.getChildren()){
-                    CartModel cartModel = dataSnapshot.getValue(CartModel.class);
-                    listCart.add(cartModel);
-                }
-                adapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-    }
 }

@@ -11,10 +11,7 @@ public class BestModel {
         this.price = price;
     }
 
-    public BestModel(String title, String price) {
-        this.title = title;
-        this.price = price;
-    }
+    public BestModel() {}
 
     public String getPrice() {
         return price;

@@ -30,8 +30,6 @@ public class BestAdapter extends RecyclerView.Adapter<BestAdapter.ModelViewProdu
         this.listInfo = listInfo;
     }
 
-
-
     @NonNull
     @Override
     public BestAdapter.ModelViewProductHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

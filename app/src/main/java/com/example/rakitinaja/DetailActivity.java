@@ -3,22 +3,18 @@ package com.example.rakitinaja;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.net.wifi.hotspot2.omadm.PpsMoParser;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import com.example.rakitinaja.model.UserModel;
 import com.example.rakitinaja.prevalent.Prevalent;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -35,7 +31,6 @@ public class DetailActivity extends AppCompatActivity {
     ImageView tvImg;
     TextView tvTitle, tvInfo, tvPrice;
     Button addToCart, toCart;
-
     String title, info, price, phone;
     int img;
 
@@ -57,16 +52,10 @@ public class DetailActivity extends AppCompatActivity {
         getData();
         setData();
 
-
-        toCart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(DetailActivity.this, CartActivity.class);
-                startActivity(intent);
-            }
+        toCart.setOnClickListener(v -> {
+            Intent intent = new Intent(DetailActivity.this, CartActivity.class);
+            startActivity(intent);
         });
-        
-        
 
         addToCart.setOnClickListener(v -> addToCartDatabase(phone, title, price));
 
@@ -74,14 +63,12 @@ public class DetailActivity extends AppCompatActivity {
 
     public void addToCartDatabase(final String phone, final String title, final String price) {
 
-        String saveCurrentTime, saveCurrentDate;
+        String saveCurrentDate;
         DatabaseReference cartListRef;
 
         Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat currentDate = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss a");
+        @SuppressLint("SimpleDateFormat") SimpleDateFormat currentDate = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss a");
         saveCurrentDate = currentDate.format(calendar.getTime());
-
-
         cartListRef = FirebaseDatabase.getInstance("https://rakitinajacartdatabase-default-rtdb.asia-southeast1.firebasedatabase.app").getReference();
         
         cartListRef.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -94,13 +81,9 @@ public class DetailActivity extends AppCompatActivity {
                     cartMap.put("Time",saveCurrentDate);
 
                     cartListRef.child("Cart List").child(phone).child("Product").child(saveCurrentDate).updateChildren(cartMap)
-                            .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if(task.isSuccessful()){
-                                        Toast.makeText(DetailActivity.this, "Added To Cart", Toast.LENGTH_SHORT).show();
-
-                                    }
+                            .addOnCompleteListener(task -> {
+                                if(task.isSuccessful()){
+                                    Toast.makeText(DetailActivity.this, "Added To Cart", Toast.LENGTH_SHORT).show();
                                 }
                             });
                 }
@@ -111,13 +94,10 @@ public class DetailActivity extends AppCompatActivity {
                     cartMap.put("Time",saveCurrentDate);
 
                     cartListRef.child("Cart List").child(phone).child("Product").child(saveCurrentDate).updateChildren(cartMap)
-                            .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if(task.isSuccessful()){
-                                        Toast.makeText(DetailActivity.this, "Added To Cart", Toast.LENGTH_SHORT).show();
+                            .addOnCompleteListener(task -> {
+                                if(task.isSuccessful()){
+                                    Toast.makeText(DetailActivity.this, "Added To Cart", Toast.LENGTH_SHORT).show();
 
-                                    }
                                 }
                             });
                 }
@@ -129,11 +109,7 @@ public class DetailActivity extends AppCompatActivity {
             }
         });
 
-        
-        
-
     }
-
 
     public void getData(){
 
@@ -141,8 +117,6 @@ public class DetailActivity extends AppCompatActivity {
         img = getIntent().getIntExtra("img",1);
         info = getIntent().getStringExtra("info");
         price = getIntent().getStringExtra("price");
-
-
 
     }
 
