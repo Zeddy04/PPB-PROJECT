@@ -13,7 +13,7 @@ Project is created with:
 1. Fork source code
 2. Download/Clone source code ke lokal
 3. Cari file ***DataDecriptionItem.java*** di ```app\src\main\java\com\example\rakitinaja```
-4. Masukkan data produk ***sesuai dengan yang dicontohkan dalam source code!***
+4. Masukkan data produk (nama produk, harga, description, gambar produk) ***sesuai dengan yang dicontohkan dalam source code!***
 5. Jangan lupa pull request
 
 
