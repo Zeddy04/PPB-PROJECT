@@ -6,8 +6,8 @@ Project is created with:
 * Firebase
 
 ## Yang kurang
-1. Update desain UI [Bagas](https://github.com/bagasmiftahun) @github/BagasMiftahun 
-2. Input product data [Bachtiar](https://github.com/pencarimeki)
+1. Update desain UI [Bagas](https://github.com/bagasmiftahun)
+2. Input product data [Bachtiar](https://github.com/pencarimeki) dan Ihsan
 
 ## Cara input data produk bagi yang belum tau
 1. Fork source code
