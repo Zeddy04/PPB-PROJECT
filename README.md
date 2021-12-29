@@ -5,4 +5,7 @@ Project is created with:
 * Java
 * Firebase
 
-## Rules
+## Yang kurang
+1. Update desain UI [Bagas](https://github.com/bagasmiftahun) @github/BagasMiftahun 
+2. Input product data
+
