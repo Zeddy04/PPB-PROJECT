@@ -16,5 +16,4 @@ Project is created with:
 4. Masukkan data produk (nama produk, harga, description, gambar produk) ***sesuai dengan yang dicontohkan dalam source code!***
 5. Jangan lupa pull request
 
-## Perubahan dilakukan alvin2
 
