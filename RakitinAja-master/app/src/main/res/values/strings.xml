@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">RakitinAja</string>
-    <string name="get_started">GET STARTED</string>
-    <string name="build_your_computer">Build your computer</string>
-    <string name="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit Cras ac ante a nunc fermentum imperdiet vitae non tortor</string>
-    <string name="textview">TextView</string>
-</resources>
