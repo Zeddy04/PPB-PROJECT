@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="270dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="43dp"
+    android:elevation="20dp"
+    app:cardCornerRadius="10dp"
+    app:cardBackgroundColor="#4030E9">
+
+    <TextView
+        android:id="@+id/carttitleimg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Amd Ryzen 5 3400G"
+        android:textSize="20sp"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="45dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"/>
+
+    <TextView
+        android:id="@+id/cartpriceimg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00,-"
+        android:textSize="20sp"
+        android:layout_marginTop="100dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginStart="15dp" />
+
+
+
+
+
+</androidx.cardview.widget.CardView>
