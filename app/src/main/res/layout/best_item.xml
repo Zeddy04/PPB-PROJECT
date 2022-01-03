@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="270dp"
     android:layout_height="140dp"
-    android:layout_marginStart="43dp"
     android:id="@+id/maincard"
     android:elevation="20dp"
+    android:layout_marginStart="36dp"
     app:cardCornerRadius="10dp"
-    app:cardBackgroundColor="#4030E9">
+    app:cardBackgroundColor="@color/royal_blue">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -39,15 +39,15 @@
             android:id="@+id/titleimg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Amd Ryzen 5 3400G"
-            android:textSize="14dp"
-            android:layout_marginTop="45dp"
-            android:layout_marginBottom="45dp"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:layout_toEndOf="@+id/innercard"
             android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"/>
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="45dp"
+            android:layout_toEndOf="@+id/innercard"
+            android:text="Amd Ryzen 5 3400G"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/priceimg"

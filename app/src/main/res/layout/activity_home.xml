@@ -5,196 +5,133 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="#F6F9FF"
+    android:background="@color/white"
     tools:context=".HomeActivity">
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
+    <RelativeLayout
+        android:id="@+id/content1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_header"
-        android:elevation="7dp"
-        android:paddingBottom="10dp"
+        android:padding="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
         <ImageView
-            android:id="@+id/imageViewProfil"
-            android:layout_width="41dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="32dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/alvin2" />
-
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="230dp"
-            android:layout_height="33dp"
-            android:layout_marginTop="28dp"
-            android:background="@drawable/search_bg"
-            android:hint="What are you looking for?"
-            android:paddingStart="8dp"
-            android:paddingEnd="10dp"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toStartOf="@+id/imageViewProfil"
-            app:layout_constraintHorizontal_bias="0.547"
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:id="@+id/profil"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/alvin2" />
 
         <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="28dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/tab" />
+            android:id="@+id/cart"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/cart" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/hometext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="28dp"
-            android:text="Good Morning"
+            android:layout_below="@+id/profil"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif"
+            android:text="Get your\ncomputer part"
             android:textColor="@color/black"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+            android:textSize="35sp"
+            android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textView2"
+        <FrameLayout
+            android:id="@+id/search_bar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:text="Alvin Aprianto"
-            android:textColor="@color/black"
-            android:textSize="30sp"
-            android:textStyle="normal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            android:layout_below="@id/hometext"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <EditText
+                android:id="@+id/search"
+                android:layout_width="280dp"
+                android:layout_height="55dp"
+                android:background="@drawable/search_bg"
+                android:focusableInTouchMode="true"
+                android:hint="Search product..."
+                android:textColorHint="@color/black2"
+                android:textAlignment="center"
+                android:textSize="20sp" />
 
-    <ScrollView
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/search_icon" />
+
+        </FrameLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="620dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
-        app:layout_constraintVertical_bias="0.0"
-        android:paddingTop="15dp"
-        android:paddingBottom="15dp">
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/content1"
+        tools:layout_editor_absoluteX="0dp">
 
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/categories"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingBottom="50dp">
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="30dp"
+            android:fontFamily="sans-serif"
+            android:text="Categories"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Category"
-                android:layout_marginStart="30dp"
-                android:textColor="#4030E9"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mainrecycler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/categories"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/category_item" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/mainrecycler"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintBottom_toTopOf="@+id/imageView3"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:listitem="@layout/category_item" />
+        <TextView
+            android:id="@+id/best_selling"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="30dp"
+            android:fontFamily="sans-serif"
+            android:text="Best Selling"
+            android:textColor="@color/black"
+            android:layout_marginTop="25dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_below="@id/mainrecycler"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="25dp"
-                android:text="Best Selling"
-                android:textColor="#4030E9"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mainrecycler2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/best_selling"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/best_item" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/mainrecycler2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="15dp"
-                android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintBottom_toTopOf="@+id/imageView3"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:listitem="@layout/best_item" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="25dp"
-                android:text="Our PC Build"
-                android:textColor="#4030E9"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:layout_width="300dp"
-                android:layout_height="200dp"
-                android:layout_marginTop="15dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="10dp"
-                android:src="@drawable/gaming"
-                android:scaleType="centerCrop"
-                android:background="#4030E9"
-                />
-
-            <ImageView
-                android:layout_width="300dp"
-                android:layout_height="200dp"
-                android:layout_marginTop="15dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="10dp"
-                android:src="@drawable/gaming"
-                android:scaleType="centerCrop"
-                android:background="#4030E9"
-                />
-
-            <ImageView
-                android:layout_width="300dp"
-                android:layout_height="200dp"
-                android:layout_marginTop="15dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="10dp"
-                android:src="@drawable/gaming"
-                android:scaleType="centerCrop"
-                android:background="#4030E9"
-                />
-
-
-        </LinearLayout>
-
-    </ScrollView>
-
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
