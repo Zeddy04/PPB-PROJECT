@@ -161,7 +161,7 @@ public class DataDescriptionItem {
                 "Audio Chip 	: Front panel audio connector(s) (AAFP)\n" +
                 "Tipe dan Jumlah USB 	: 4 x USB 3.1 & 6 x USB 2.0/1.1\n" +
                 "fitur tambahan 	: Intel 14 nm CPU,Intel Extreme Memory Profile (XMP) productnation.",
-            "AMD AM4 Socket for AMD Ryzen™ 5000 Series/ 5000 G-Series/ 4000 G-Series/ 3000 Series Desktop Processors ** Refer to www.asus.com for CPU support list"
+            "AMD AM4 Socket for AMD Ryzen™ 5000 Series/ 5000 G-Series/ 4000 G-Series/ 3000 Series Desktop Processors ** Refer to www.asus.com for CPU support list",
                 "Chipset : AMD B550\n" +
                 "Memory  : 4 x DIMM, Max. 128GB, DDR4 4866(O.C)/4800(O.C.)/4600(O.C)/4466(O.C.)/4400(O.C)/4333(O.C.)/4266(O.C.)/4200(O.C.)/4133(O.C.)/4000(O.C.)/3866(O.C.)/3733(O.C.)/3600(O.C.)/3466(O.C.)/3400(O.C.)/3333(O.C.)/3200/3000/2933/2800/2666/2400/2133 MHz Un-buffered Memory *\n" +
                 "Dual Channel Memory Architecture : ECC Memory (ECC mode) support varies by CPU.\n" +

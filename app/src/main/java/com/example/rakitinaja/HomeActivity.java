@@ -6,7 +6,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.rakitinaja.adapter.CategoryAdapter;
 import com.example.rakitinaja.adapter.BestAdapter;
@@ -25,7 +28,8 @@ public class HomeActivity extends AppCompatActivity {
     public static ArrayList<CategoryModel> listModel;
     public static ArrayList<BestModel> listProduct;
     ArrayList<String> listInfo;
-    ImageView profil;
+    ImageView cart, profil;
+    EditText search;
     CategoryAdapter CategoryAdapter;
     BestAdapter BestAdapter;
 
@@ -35,15 +39,24 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         Paper.init(this);
         //sementara logout ketika mengklik profil
-        profil = findViewById(R.id.imageViewProfil);
+        profil = findViewById(R.id.profil);
+        Paper.init(this);
         profil.setOnClickListener(v -> {
             Paper.book().destroy();
-            Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+            Toast.makeText(HomeActivity.this, "Log out", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(HomeActivity.this, LoginActivity.class));
+        });
+        cart = findViewById(R.id.cart);
+        cart.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, CartActivity.class);
             startActivity(intent);
         });
+        search = findViewById(R.id.search);
 
         //listcategory
         listModel = new ArrayList<>();
+        listModel.add(new CategoryModel(R.drawable.category));
+        listModel.add(new CategoryModel(R.drawable.category));
         listModel.add(new CategoryModel(R.drawable.category));
         listModel.add(new CategoryModel(R.drawable.category));
         listModel.add(new CategoryModel(R.drawable.category));

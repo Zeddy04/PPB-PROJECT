@@ -10,19 +10,21 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/RakitinAja/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2203125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/RakitinAja/app/src/main/res/drawable/search_bg.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/User/AndroidStudioProjects/RakitinAja/app/src/main/res/drawable/shader.xml" value="0.16296296296296298" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/RakitinAja/app/src/main/res/layout-v28/activity_register.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/RakitinAja/app/src/main/res/layout/activity_cart.xml" value="0.15670289855072464" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/RakitinAja/app/src/main/res/layout/activity_detail.xml" value="0.14" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/RakitinAja/app/src/main/res/layout/activity_home.xml" value="0.16" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/RakitinAja/app/src/main/res/layout/activity_login.xml" value="0.16168478260869565" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/RakitinAja/app/src/main/res/layout/activity_detail.xml" value="0.33" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/RakitinAja/app/src/main/res/layout/activity_home.xml" value="0.33" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/RakitinAja/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/RakitinAja/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/RakitinAja/app/src/main/res/layout/activity_register.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/RakitinAja/app/src/main/res/layout/activity_start.xml" value="0.15172101449275363" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/RakitinAja/app/src/main/res/layout/activity_register.xml" value="0.33" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/RakitinAja/app/src/main/res/layout/activity_start.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/RakitinAja/app/src/main/res/layout/best_item.xml" value="0.1814814814814815" />
         <entry key="..\:/Users/User/AndroidStudioProjects/RakitinAja/app/src/main/res/layout/cart_item.xml" value="0.15670289855072464" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/RakitinAja/app/src/main/res/layout/category_item.xml" value="0.1814814814814815" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/RakitinAja/app/src/main/res/layout/category_item.xml" value="0.67" />
         <entry key="..\:/Users/User/AndroidStudioProjects/RakitinAja/app/src/main/res/layout/child_item.xml" value="0.1814814814814815" />
         <entry key="..\:/Users/User/AndroidStudioProjects/RakitinAja/app/src/main/res/layout/child_item2.xml" value="0.1814814814814815" />
         <entry key="..\:/Users/User/AndroidStudioProjects/RakitinAja/app/src/main/res/layout/item_card.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/RakitinAja/app/src/main/res/layout/slider.xml" value="0.2722222222222222" />
       </map>
     </option>
   </component>

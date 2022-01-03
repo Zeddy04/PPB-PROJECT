@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,7 +31,8 @@ public class DetailActivity extends AppCompatActivity {
 
     ImageView tvImg;
     TextView tvTitle, tvInfo, tvPrice;
-    Button addToCart, toCart;
+    Button addToCart;
+    ImageButton back;
     String title, info, price, phone;
     int img;
 
@@ -44,7 +46,7 @@ public class DetailActivity extends AppCompatActivity {
         tvInfo = findViewById(R.id.detailinfo);
         tvPrice = findViewById(R.id.detailprice);
         addToCart = findViewById(R.id.btn_cart);
-        toCart = findViewById(R.id.btn_back);
+        back = findViewById(R.id.btn_back);
 
         Paper.init(this);
         phone = Paper.book().read(Prevalent.userPhoneKey);
@@ -52,8 +54,8 @@ public class DetailActivity extends AppCompatActivity {
         getData();
         setData();
 
-        toCart.setOnClickListener(v -> {
-            Intent intent = new Intent(DetailActivity.this, CartActivity.class);
+        back.setOnClickListener(v -> {
+            Intent intent = new Intent(DetailActivity.this, HomeActivity.class);
             startActivity(intent);
         });
 
